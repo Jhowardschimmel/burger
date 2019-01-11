@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-const PORT  = process.env.PORT || 3000;
+const PORT  = process.env.PORT || 5000;
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -21,6 +21,4 @@ var routes = require("./controllers/burgersController.js");
 
 app.use(routes);
 
-app.listen(PORT, function() {
-  console.log("Listening on port:%s", PORT);
-});
+app.listen(process.env.PORT || 5000)
