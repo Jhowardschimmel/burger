@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+require('dotenv').config()
 
 const PORT  = process.env.PORT || 5000;
 var app = express();
@@ -21,4 +22,6 @@ var routes = require("./controllers/burgersController.js");
 
 app.use(routes);
 
-app.listen(process.env.PORT || 5000)
+app.listen(PORT, function() {
+    console.log("Listening on port:", PORT);
+  });
